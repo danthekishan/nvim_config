@@ -139,5 +139,5 @@ cmp.setup {
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
-vim.keymap.set('n', '<leader>do', vim.diagnostic.open_float)
-vim.keymap.set('n', '<leader>dl', vim.diagnostic.setloclist)
+vim.keymap.set('n', '<leader>do', vim.diagnostic.open_float, { desc = "[D]iagnostics [O]pen"})
+vim.keymap.set('n', '<leader>dl', vim.diagnostic.setloclist, { desc = "[D]iagnostics [L]ist"})
