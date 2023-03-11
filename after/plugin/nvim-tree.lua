@@ -2,11 +2,14 @@ local HEIGHT_RATIO = 0.8 -- You can change this
 local WIDTH_RATIO = 0.5 -- You can change this too
 require("nvim-tree").setup({
 	sort_by = "case_sensitive",
+	update_focused_file = {
+		enable = true,
+		update_cwd = true
+	},
 	view = {
 		relativenumber = true,
 		float = {
 			enable = true,
-			quit_on_focus_loss = false,
 			open_win_config = function()
 				local screen_w = vim.opt.columns:get()
 				local screen_h = vim.opt.lines:get() - vim.opt.cmdheight:get()
@@ -34,8 +37,28 @@ require("nvim-tree").setup({
 		group_empty = true,
 	},
 	filters = {
-		dotfiles = true,
+		custom = { '^.git$', '^node_modules$' }
 	},
+	git = {
+		enable = true
+	},
+	log = {
+		enable = true,
+		types = {
+			diagnostics = true
+		}
+	},
+	diagnostics = {
+		enable = true,
+		show_on_dirs = false,
+		debounce_delay = 50,
+		icons = {
+			hint = '',
+			info = '',
+			warning = '',
+			error = ''
+		}
+	}
 })
 
 vim.keymap.set("n", "<leader>et", "<cmd>:NvimTreeToggle<CR>", { desc = "[E]xplorer [T]oggle" })

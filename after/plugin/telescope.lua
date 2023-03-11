@@ -1,8 +1,8 @@
-
 -- [[ Configure Telescope ]]
 -- See `:help telescope` and `:help telescope.setup()`
 require('telescope').setup {
   defaults = {
+    path_display = { "smart" },
     mappings = {
       i = {
         ['<C-u>'] = false,
@@ -10,6 +10,12 @@ require('telescope').setup {
       },
     },
   },
+  layout_config = {
+    horizontal = {
+      preview_cutoff = 100,
+      preview_width = 0.6
+    }
+  }
 }
 
 -- Enable telescope fzf native, if installed
@@ -35,8 +41,8 @@ vim.keymap.set('n', '<leader>fl', require('telescope.builtin').live_grep, { desc
 vim.keymap.set('n', '<leader>fd', require('telescope.builtin').diagnostics, { desc = '[F]ind [D]iagnostics' })
 
 --git search
-vim.keymap.set("n", "<leader>fgc", require("telescope.builtin").git_commits, { desc = "[F]ind [G]it [C]ommits"})
-vim.keymap.set("n", "<leader>fgs", require("telescope.builtin").git_commits, { desc = "[F]ind [G]it [S]tatus"})
+vim.keymap.set("n", "<leader>fgc", require("telescope.builtin").git_commits, { desc = "[F]ind [G]it [C]ommits" })
+vim.keymap.set("n", "<leader>fgs", require("telescope.builtin").git_commits, { desc = "[F]ind [G]it [S]tatus" })
 
 --commands
-vim.keymap.set("n", "<leader>fch", require("telescope.builtin").command_history, { desc = "[F]ind [C]ommand [H]istory"})
+vim.keymap.set("n", "<leader>fch", require("telescope.builtin").command_history, { desc = "[F]ind [C]ommand [H]istory" })
