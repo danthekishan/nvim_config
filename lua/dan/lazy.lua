@@ -166,5 +166,8 @@ return require("lazy").setup({
 
 	-- highligh references
 	{ "RRethy/vim-illuminate" },
+
+	-- highligh references
+	{ "mattn/emmet-vim" },
 	-- {"folke/noice.nvim"},
 }, {})

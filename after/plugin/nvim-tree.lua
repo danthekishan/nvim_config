@@ -4,7 +4,7 @@ require("nvim-tree").setup({
 	sort_by = "case_sensitive",
 	update_focused_file = {
 		enable = true,
-		update_cwd = true
+		update_cwd = true,
 	},
 	view = {
 		relativenumber = true,
@@ -37,28 +37,28 @@ require("nvim-tree").setup({
 		group_empty = true,
 	},
 	filters = {
-		custom = { '^.git$', '^node_modules$' }
+		custom = { "^.git$", "^node_modules$" },
 	},
 	git = {
-		enable = true
+		enable = true,
 	},
 	log = {
 		enable = true,
 		types = {
-			diagnostics = true
-		}
+			diagnostics = true,
+		},
 	},
 	diagnostics = {
 		enable = true,
 		show_on_dirs = false,
 		debounce_delay = 50,
 		icons = {
-			hint = '',
-			info = '',
-			warning = '',
-			error = ''
-		}
-	}
+			hint = "",
+			info = "",
+			warning = "",
+			error = "",
+		},
+	},
 })
 
 vim.keymap.set("n", "<leader>et", "<cmd>:NvimTreeToggle<CR>", { desc = "[E]xplorer [T]oggle" })
